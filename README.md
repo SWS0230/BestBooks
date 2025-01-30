@@ -1,5 +1,4 @@
-https://sws0230.github.io/BestBooks/
-yes24, aladin의 주간 베스트셀러 10위를 모아 볼 수 있는 사이트입니다.
+https://sws0230.github.io/BestBooks/ -> yes24, aladin의 주간 베스트셀러 10위를 모아 볼 수 있는 사이트입니다.
 
 
 # 25.01.30 Update Log
