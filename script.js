@@ -1,7 +1,6 @@
 fetch('BookCsv.csv') // 현재 디렉토리에서 CSV 파일 가져오기
     .then(response => response.text()) // 텍스트 변환
     .then(csvText => {
-        console.log("📄 CSV 원본 데이터:", csvText);
         parseCSV(csvText); // CSV 변환 함수 호출
     })
     .catch(error => console.error("❌ CSV 파일을 불러오는 중 오류 발생:", error));
