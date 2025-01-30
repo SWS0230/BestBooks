@@ -129,14 +129,14 @@ df_Books.to_csv('BookCsv.csv')
 
 # https://ealuuu.tistory.com/13 -> 이건 별개인데, replit run을 눌러도 실행이 안되는 경우 이렇게 하면 된다.
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/')
-def index():
-  bookDf = pd.read_csv('BookCsv.csv')
+# @app.route('/')
+# def index():
+#   bookDf = pd.read_csv('BookCsv.csv')
 
-  table_html = bookDf.to_html(classes = 'table table-striped')
-  return render_template('index.html', table=table_html)
+#   table_html = bookDf.to_html(classes = 'table table-striped')
+#   return render_template('index.html', table=table_html)
 
-if __name__ == '__main__':
-  app.run(debug=True)
+# if __name__ == '__main__':
+#   app.run(debug=True)
