@@ -2,7 +2,7 @@ name: Weekly Book List
 
 on:
   schedule:
-    - cron: '0 */24 * * *'  # 매주 월요일 00:00에 실행(테스트를 위해 24시간마다 실행)
+    - cron: '0 9 * * *'  # 매주 월요일 00:00에 실행(테스트를 위해 매일 09:00에 실행)
   workflow_dispatch: # 수동 실행을 원할 때 사용
 
 jobs:
