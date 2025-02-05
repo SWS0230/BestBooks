@@ -61,5 +61,19 @@ aladin_Book10 = aladin_bookName[9].text
 df_Books = pd.DataFrame({'yes24':[yes24_Book1, yes24_Book2, yes24_Book3, yes24_Book4, yes24_Book5, yes24_Book6, yes24_Book7, yes24_Book8, yes24_Book9, yes24_Book10], 
                          'aladin':[aladin_Book1, aladin_Book2, aladin_Book3, aladin_Book4, aladin_Book5, aladin_Book6, aladin_Book7, aladin_Book8, aladin_Book9, aladin_Book10]})
 
-
 df_Books.to_csv('BookCsv.csv')
+
+with open('BookCsv.csv', mode='r', newline='', encoding='utf-8') as infile:
+  reader = csv.reader(infile, quotechar='"')
+  modified_data = []
+  for row in reader:
+    new_row = [cell.replace(',', '&') if ',' in cell else cell for cell in row]
+    modified_data.append(new_row)
+
+with open('BookCsv.csv', mode='w', newline='', encoding='utf-8') as outfile:
+  writer = csv.writer(outfile, quotechar='"', quoting=csv.QUOTE_MINIMAL)
+  writer.writerows(modified_data)
+
+print('----------------------------')
+print('| Bookcsv.csv 최신화 완료! |')
+print('----------------------------')
