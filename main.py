@@ -3,6 +3,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 import pandas as pd
+import csv
 
 # 좀 더 든 생각 : 각 서점 사이트들의 주간 베스트셀러를 종합하여 가장 많이 겹치는 것 / 각 사이트에서 주로 나온 키워드 등 분석
 
