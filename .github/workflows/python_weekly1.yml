@@ -2,7 +2,7 @@ name: Weekly Book List
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # 매주 월요일 00:00에 실행(테스트를 위해 매일 09:00에 실행)
+    - cron: '*/2 * * * *'  # 매주 월요일 00:00에 실행(테스트를 위해 매일 09:00에 실행)
   workflow_dispatch: # 수동 실행을 원할 때 사용
 
 jobs:
@@ -26,3 +26,15 @@ jobs:
       - name: Run main.py
         run: |
           python main.py
+          
+      - name: Commit and push updated CSV file
+        run: |
+          git config --global user.name "SWS0230"
+          git config --global user.email "sunwoosong0@gmail.com"
+          git add BookCsv.csv
+          git commit -m "Update CSV file"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          
